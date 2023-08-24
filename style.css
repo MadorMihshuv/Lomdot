@@ -1,0 +1,38 @@
+#body {
+    background-image: url(./assets/mainPage.png);
+    background-size: 100vw 100vh;
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden;
+}
+
+#startPrishaBtn {
+    visibility: hidden;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 88vh;
+    left: 65vw;
+}
+
+#startBtn {
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 88vh;
+    left: 65vw;
+}
+
+#startOverBtn {
+    visibility: hidden;
+    position: absolute;
+    left: 20vw;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+}
