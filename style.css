@@ -28,11 +28,13 @@
 }
 
 #startOverBtn {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
-    left: 20vw;
+    left: 10vw;
+    bottom: 20vh;
     border: none !important;
     font-size:0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
 }
+

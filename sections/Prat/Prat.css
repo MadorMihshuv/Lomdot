@@ -1,9 +1,194 @@
 #body {
-    background-image: url();
+    background-image: url(/assets/Prat/אינדיקציות\ שנתיות.png);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     margin: 0; 
     height: 100%; 
     overflow: hidden;
+    z-index: 1;
     user-select: none;
+}
+
+#blackBackground {
+    opacity: 0%;
+    z-index: 2;
+    position: relative;
+    visibility: visible;
+}
+
+.cannotSelect {
+    pointer-events: none;
+}
+
+@keyframes hideBackground {
+    0% { 
+        opacity: 80%;
+    }
+    20% {
+         opacity: 75%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+#nextBtn {
+    position: relative;
+    top: 93vh;
+    left: 17vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#backBtn {
+    visibility: hidden;
+    position: relative;
+    top: 93vh;
+    left: 25vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#returnBtn {
+    position: relative;
+    top: 93vh;
+    left: 17vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    visibility: hidden;
+}
+
+.bubbles {
+    visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+}
+
+#bubble1 {
+    top: 15vh;
+    left: 25vw;
+}
+
+#bubble2 {
+    top: 45vh;
+    left: 2vw;
+}
+
+#bubble3 {
+    top: 45vh;
+    left: 48vw;
+}
+
+#bubble4 {
+    top: 25vh;
+    left: 72vw;
+}
+
+
+#bubble1:hover {
+    height: 45vh;
+    width: 25vw;
+    top: 13vh;
+    left: 23.5vw;
+}
+
+#bubble2:hover {
+    top: 45vh;
+    left: 2vw;
+}
+
+#bubble3:hover {
+    top: 45vh;
+    left: 48vw;
+}
+
+#bubble4:hover {
+    top: 25vh;
+    left: 72vw;
+}
+
+#boyFishy {
+    visibility: hidden;
+    position: absolute;
+    top: 20vh;
+    cursor: pointer;
+}
+
+#submarineLight {
+    visibility: hidden;
+    position: absolute;
+    top: -0.5vh;
+    left: 3vw;
+    opacity: 0%;
+
+}
+
+#submarine {
+    position: absolute;
+    bottom: 55vh;
+    visibility: hidden;
+    height: 70vh;
+    right: 90vw;
+}
+
+@keyframes submarineComeIn {
+    0% { 
+        right: 90vw;
+    }
+    100% {
+        right: 77vw;
+    }
+}
+
+@keyframes lightUp {
+    0% { 
+        opacity: 80%;
+    }
+    90% {
+        opacity: 80%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes showLight {
+    0% { 
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+#girlPearl {
+    visibility: hidden;
+    position: absolute;
+    left: 10vw;
+    top: 24vh;
+    cursor: pointer;
+}
+
+#boyPearl {
+    position: absolute;
+    visibility: hidden;
+    left: 55vw;
+    cursor: pointer;
+    top: 24vh;
 }

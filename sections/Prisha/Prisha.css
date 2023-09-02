@@ -156,11 +156,9 @@
 #arrowsResignation {
     opacity: 0%;
     position: absolute;
-    left: 35vw;
-    bottom: 16vh;
+    left: -1.5vw;
+    top: -7vh;
     animation-direction: alternate;
-    height: 35%;
-    width: 55%;
 }
 
 @keyframes arrowsTransition {
@@ -186,7 +184,8 @@
 
 #blackBackground {
     opacity: 0%;
-    z-index: 5;
+    z-index:2;
+    position: relative;
     visibility: visible;
 }
 

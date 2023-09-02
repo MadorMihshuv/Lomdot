@@ -13,6 +13,9 @@ let resignationBtn;
 let dismissalBtn;
 let dismissalBtn2;
 
+const visible = "visible";
+const hidden = "hidden";
+
 let allDismissalButtons;
 let dismissalBtnPopUp1;
 let dismissalBtnPopUp2;
@@ -44,8 +47,7 @@ window.onload = function() {
     blackBackground.style.animation = "hideBackground 2s";
     setTimeout(() => {
         DisableAndEnableButtons(false);
-    blackBackground.style.visibility = "hidden";
-
+        blackBackground.style.visibility = "hidden";
     }, 2200);
 }
 
@@ -113,28 +115,24 @@ function GoBack() {
     thailandPopUp.style.visibility = "hidden";
     arrows.style.visibility = "hidden";
     arrowsResignation.style.visibility = "hidden";
-    dismissalBtnPopUp1.style.visibility = "hidden";
-    dismissalBtnPopUp2.style.visibility = "hidden";
-    dismissalBtnPopUp3.style.visibility = "hidden";
-    dismissalBtnPopUp4.style.visibility = "hidden";
+    dismissalBtnHideOrShow(hidden);
     allDismissalButtons.style.visibility = "hidden";
-    ShowMainButtonsAndCheckes();
+    ShowOrHideMainButtonsAndCheckes(visible);
     CheckWhatFinished();
 
 
     //check last page before moving a section
     if(ifChecked[0] && ifChecked[1] && ifChecked[2] && ifChecked[3] && ifChecked[4]) {
-        window.location.href = "/MainPage.html";
+        setTimeout(() => {
+            window.location.href = "/MainPage.html";    
+        }, 1500);
     }
 }
 
 function backBtnFunc() {
     DismissalPage();
     allDismissalButtons.style.visibility = "hidden";
-    dismissalBtnPopUp1.style.visibility = "hidden";
-    dismissalBtnPopUp2.style.visibility = "hidden";
-    dismissalBtnPopUp3.style.visibility = "hidden";
-    dismissalBtnPopUp4.style.visibility = "hidden";
+    dismissalBtnHideOrShow(hidden);
 }
 
 //Checks which chapters are done
@@ -158,11 +156,7 @@ function CheckWhatFinished() {
 
 //Hide all the buttons of the main part
 function HideMainButtonsAndCheckes() {
-    tivitBtn.style.visibility = "hidden";
-    mukdemetBtn.style.visibility = "hidden";
-    disabilityBtn.style.visibility = "hidden";
-    resignationBtn.style.visibility = "hidden";
-    dismissalBtn.style.visibility = "hidden";
+    ShowOrHideMainButtonsAndCheckes(hidden);
     dismissalBtn2.style.visibility = "hidden";
 
     check1.style.visibility = "hidden";
@@ -173,12 +167,12 @@ function HideMainButtonsAndCheckes() {
 }
 
 //Show all the buttons of the main part
-function ShowMainButtonsAndCheckes() {
-    tivitBtn.style.visibility = "visible";
-    mukdemetBtn.style.visibility = "visible";
-    disabilityBtn.style.visibility = "visible";
-    resignationBtn.style.visibility = "visible";
-    dismissalBtn.style.visibility = "visible";
+function ShowOrHideMainButtons(showOrHide) {
+    tivitBtn.style.visibility = `${showOrHide}`;
+    mukdemetBtn.style.visibility = `${showOrHide}`;
+    disabilityBtn.style.visibility = `${showOrHide}`;
+    resignationBtn.style.visibility = `${showOrHide}`;
+    dismissalBtn.style.visibility = `${showOrHide}`;
 }
 
 //Loads the Prisha Tivit Chapter
@@ -222,12 +216,16 @@ function DismissalSecondPage() {
     NextPage();
     kodem.style.visibility = "visible";
     allDismissalButtons.style.visibility = "visible";
-    dismissalBtnPopUp1.style.visibility = "visible";
-    dismissalBtnPopUp2.style.visibility = "visible";
-    dismissalBtnPopUp3.style.visibility = "visible";
-    dismissalBtnPopUp4.style.visibility = "visible";
+    dismissalBtnHideOrShow(visible);
     body.style.backgroundImage = `${imageBackrounds[5]}`;
     ifChecked[3] = true;
+}
+
+function dismissalBtnHideOrShow(hideOrShow) {
+    dismissalBtnPopUp1.style.visibility = `${showOrHide}`;;
+    dismissalBtnPopUp2.style.visibility = `${showOrHide}`;;
+    dismissalBtnPopUp3.style.visibility = `${showOrHide}`;;
+    dismissalBtnPopUp4.style.visibility = `${showOrHide}`;;
 }
 
 //Loads the Prisha Resignation Chapter
