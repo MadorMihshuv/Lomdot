@@ -6,7 +6,8 @@
     overflow: hidden;
 }
 
-#startPrishaBtn {
+#startBtn {
+    background: transparent;
     visibility: hidden;
     border: none !important;
     font-size:0;
@@ -17,7 +18,12 @@
     left: 65vw;
 }
 
-#startBtn {
+#startBtn:hover { 
+    top: 88.6vh;
+}
+
+#goBtn {
+    background: transparent;
     border: none !important;
     font-size:0;
     cursor: pointer;
@@ -25,6 +31,10 @@
     position: absolute;
     top: 88vh;
     left: 65vw;
+}
+
+#goBtn:hover { 
+    top: 88.6vh;
 }
 
 #startOverBtn {

@@ -117,13 +117,14 @@ function GoBack() {
     arrowsResignation.style.visibility = "hidden";
     dismissalBtnHideOrShow(hidden);
     allDismissalButtons.style.visibility = "hidden";
-    ShowOrHideMainButtonsAndCheckes(visible);
+    ShowOrHideMainButtons(visible);
     CheckWhatFinished();
 
 
     //check last page before moving a section
     if(ifChecked[0] && ifChecked[1] && ifChecked[2] && ifChecked[3] && ifChecked[4]) {
         setTimeout(() => {
+            sessionStorage.setItem("sectionNum" , 5);
             window.location.href = "/MainPage.html";    
         }, 1500);
     }
@@ -156,7 +157,7 @@ function CheckWhatFinished() {
 
 //Hide all the buttons of the main part
 function HideMainButtonsAndCheckes() {
-    ShowOrHideMainButtonsAndCheckes(hidden);
+    ShowOrHideMainButtons(hidden);
     dismissalBtn2.style.visibility = "hidden";
 
     check1.style.visibility = "hidden";
@@ -221,7 +222,7 @@ function DismissalSecondPage() {
     ifChecked[3] = true;
 }
 
-function dismissalBtnHideOrShow(hideOrShow) {
+function dismissalBtnHideOrShow(showOrHide) {
     dismissalBtnPopUp1.style.visibility = `${showOrHide}`;;
     dismissalBtnPopUp2.style.visibility = `${showOrHide}`;;
     dismissalBtnPopUp3.style.visibility = `${showOrHide}`;;

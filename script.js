@@ -1,64 +1,91 @@
+let goBtn;
 let startBtn;
-let startPrishaBtn;
 let body;
 let firstTime;
-let sectionsCount;
 let startOver;
 
-const backgroundImages = ['url("./assets/mainPage.png")','url("./assets/עמוד\ פתיחה\ סיום\ העסקה.png")', 'url("./assets/עמוד\ פתיחה\ טיפול\ בהיבטי\ הפרט.png")'];
+const backgroundImages = ['url("./assets/mainPage.png")', 'url("./assets/Sok/עמוד\ פתיחה\ התעסקות\ בעובד.png")', 'url("./assets/עמוד\ פתיחה\ טיפול\ בהיבטי\ הפרט.png")', 'url("./assets/עמוד\ פתיחה\ סיום\ העסקה.png")'];
 const sectionHrefs = ['"./MainPage.html"' ,'"./sections/Prisha/Prisha.html"'];
 
 window.onload = function() {
     Load();
-    if(sessionStorage.getItem("visited") == '1') {
-        sectionsCount = sessionStorage.getItem("sectionsCount");
-        console.log(sectionsCount);
-        sessionStorage.setItem("sectionsCount" , sectionsCount++);
-        startOver.style.visibility = "visible";
-        SectionMap();
-    }
-    else {
-        sessionStorage.setItem("sectionsCount" , 1);
-        sectionsCount = sessionStorage.getItem("sectionsCount");
-        sessionStorage.setItem("visited" , 1);
+    switch(sessionStorage.getItem("sectionNum")) {
+        case "2":
+            body.style.backgroundImage = backgroundImages[1];
+            startOver.style.visibility = "visible";
+            startBtn.style.visibility = "visible";
+            goBtn.style.visibility = "hidden";
+            break;
+        case "3":
+            body.style.backgroundImage = backgroundImages[2];
+            startOver.style.visibility = "visible";
+            startBtn.style.visibility = "visible";
+            goBtn.style.visibility = "hidden";
+            break;
+        case "4":
+            body.style.backgroundImage = backgroundImages[3];
+            startOver.style.visibility = "visible";
+            startBtn.style.visibility = "visible";
+            goBtn.style.visibility = "hidden";
+            break;
+        case "5":
+            body.style.backgroundImage = backgroundImages[3];
+            startOver.style.visibility = "visible";
+            startBtn.style.visibility = "visible";
+            goBtn.style.visibility = "hidden";
+            break;
+        case "6":
+            break;
+        case "7":
+            break;
+        default:
+            body.style.backgroundImage = backgroundImages[0];
+            break;
     }
 }
 
 //Loads all the variables
 function Load() {
     startBtn = document.getElementById("startBtn");
-    startPrishaBtn = document.getElementById("startPrishaBtn");
+    goBtn = document.getElementById("goBtn");
     body = document.getElementById("body");
     startOver = document.getElementById("startOverBtn");
 };
 
 //Loads the section map
 function SectionMap() {
-
-    body.style.backgroundImage = backgroundImages[sectionsCount];
-    startPrishaBtn.style.visibility = "visible";
-    startBtn.style.visibility = "hidden";
-    sessionStorage.setItem("sectionsCount" , sectionsCount++);
+    window.location.href = "./sections/Preview/Preview.html";
 };
 
 //Loads the section page
 function SectionPage() {
-    switch(sectionsCount) {
-        case 1:
-            window.location.href = "./sections/Prisha/Prisha.html";
+    switch(sessionStorage.getItem("sectionNum")) {
+        case "2":
+            window.location.href = "./sections/Sok/Sok.html";
             break;
-        case 2:
+        case "3":
             window.location.href = "./sections/Prat/Prat.html";
             break;
-        case 3:
-            
+        case "4":
+            window.location.href = "./sections/Prisha/Prisha.html";
+            break;
+        case "5":
+            window.location.href = "./sections/Prisha/Prisha.html";
+            break;
+        case "6":
+            window.location.href = "./sections/Prisha/Prisha.html";
+            break;
+        case "7":
+            window.location.href = "./sections/Prisha/Prisha.html";
+            break;
+        default:
+            window.location.href = "./sections/Prat/Prat.html";
             break;
     }
 };
 
 function StartOver() {
-    sessionStorage.setItem("sectionsCount" , 0);
+    sessionStorage.setItem("sectionNum" , 0);
     body.style.backgroundImage = backgroundImages[0];
     startOver.style.visibility = "visible";
-    window.location.href = "MainPage.html";
 };

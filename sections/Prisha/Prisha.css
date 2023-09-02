@@ -21,6 +21,10 @@
     z-index: 1;
 }
 
+#back:hover {
+    left: 4.8vw;
+}
+
 .cannotSelect {
     pointer-events: none;
 }
@@ -36,10 +40,10 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
-    border: none !important;
-    font-size:0;
-    cursor: pointer;
-    z-index: 1;
+}
+
+#kodem:hover {
+    left: 13.2vw;
 }
 
 #thailandMan {

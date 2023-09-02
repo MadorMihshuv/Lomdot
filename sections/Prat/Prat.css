@@ -44,6 +44,10 @@
     z-index: 1;
 }
 
+#nextBtn:hover { 
+    left: 16.8vw;
+}
+
 #backBtn {
     visibility: hidden;
     position: relative;
@@ -55,10 +59,10 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
-    border: none !important;
-    font-size:0;
-    cursor: pointer;
-    z-index: 1;
+}
+
+#backBtn:hover { 
+    left: 25.2vw;
 }
 
 #returnBtn {
@@ -72,6 +76,10 @@
     cursor: pointer;
     z-index: 1;
     visibility: hidden;
+}
+
+#returnBtn:hover { 
+    left: 25.2vw;
 }
 
 .bubbles {
@@ -104,30 +112,21 @@
 #bubble1:hover {
     height: 45vh;
     width: 25vw;
-    top: 13vh;
-    left: 23.5vw;
 }
 
 #bubble2:hover {
-    top: 45vh;
-    left: 2vw;
+    height: 45vh;
+    width: 25vw;
 }
 
 #bubble3:hover {
-    top: 45vh;
-    left: 48vw;
+    height: 45vh;
+    width: 25vw;
 }
 
 #bubble4:hover {
-    top: 25vh;
-    left: 72vw;
-}
-
-#boyFishy {
-    visibility: hidden;
-    position: absolute;
-    top: 20vh;
-    cursor: pointer;
+    height: 45vh;
+    width: 25vw;
 }
 
 #submarineLight {
@@ -136,6 +135,7 @@
     top: -0.5vh;
     left: 3vw;
     opacity: 0%;
+    z-index: 4;
 
 }
 
@@ -145,6 +145,7 @@
     visibility: hidden;
     height: 70vh;
     right: 90vw;
+    z-index: 3;
 }
 
 @keyframes submarineComeIn {
@@ -177,6 +178,33 @@
     }
 }
 
+#pearl1 {
+    opacity: 0;
+    position: absolute;
+    left: 68.6vw;
+    top: 58vh;
+    height: 14vh;
+    width: 7vw;
+}
+
+#pearl2 {
+    position: absolute;
+    opacity: 0;
+    left: 23vw;
+    top: 58vh;
+    height: 14vh;
+    width: 7vw;
+}
+
+@keyframes showPearl {
+    0% { 
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
 #girlPearl {
     visibility: hidden;
     position: absolute;
@@ -191,4 +219,18 @@
     left: 55vw;
     cursor: pointer;
     top: 24vh;
+}
+
+#boyPearl:hover {
+    height: 62vh;
+    width: 34.7vw;
+    left: 54.5vw;
+    top: 23.5vh;
+}
+
+#girlPearl:hover {
+    height: 62vh;
+    width: 34.7vw;
+    left: 9.5vw;
+    top: 23.5vh;
 }
