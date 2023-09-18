@@ -66,6 +66,23 @@
     left: 27.2vw;
 }
 
+#continueBtn {
+    position: relative;
+    top: 93vh;
+    left: 19vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#continueBtn:hover { 
+    left: 18.8vw;
+}
+
 .popUp {
     visibility: hidden;
     position: absolute;
@@ -120,4 +137,16 @@
 
 #popUpBtn3:hover {
     top: 72.8vh;
+}
+
+@keyframes haasakaEffect {
+    0% { 
+        top: 72vh;
+    }
+    50% {
+        top: 71vh;
+    }
+    100% {
+        top: 72vh;
+    }
 }

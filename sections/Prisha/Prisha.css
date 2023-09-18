@@ -46,6 +46,23 @@
     left: 13.2vw;
 }
 
+#continueBtn {
+    visibility: hidden;
+    position: relative;
+    top: 92.5vh;
+    left: 2.8vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#continueBtn:hover {
+    left: 3vw;
+}
+
 #thailandMan {
     position: absolute;
     left: -8vw;
@@ -147,22 +164,6 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
-}
-
-#arrows {
-    opacity: 0%;
-    position: absolute;
-    left: 18.1vw;
-    top: 56.5vh;
-    animation-direction: alternate;
-}
-
-#arrowsResignation {
-    opacity: 0%;
-    position: absolute;
-    left: -1.5vw;
-    top: -7vh;
-    animation-direction: alternate;
 }
 
 @keyframes arrowsTransition {

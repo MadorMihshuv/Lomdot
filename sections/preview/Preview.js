@@ -1,5 +1,6 @@
 let backBtn;
 let nextBtn;
+let continueBtn;
 
 let blackBackground;
 let body;
@@ -22,7 +23,7 @@ const imageBackrounds = ['url("/assets/Preview/בואו\ נכיר.png")' ,'url("
 //Onload function
 window.onload = function() {
     Load();
-    blackBackground.style.animation = "hideBackground 2s";
+    blackBackground.style.animation = "hideBackground 1.5s";
 }
 
 //Onload function
@@ -33,6 +34,7 @@ function Load() {
 
     backBtn = document.getElementById("backBtn");
     nextBtn = document.getElementById("nextBtn");
+    continueBtn = document.getElementById("continueBtn");
 
     popUp1 = document.getElementById("popUp1");
     popUp2 = document.getElementById("popUp2");
@@ -53,11 +55,23 @@ function GoNext() {
                 popUpBtn1.style.visibility = "visible";
                 popUpBtn2.style.visibility = "visible";
                 popUpBtn3.style.visibility = "visible";
+                popUpBtn1.style.animation = "haasakaEffect 0.8s forwards";
+                popUpBtn2.style.animation = "haasakaEffect 0.8s 0.8s forwards";
+                popUpBtn3.style.animation = "haasakaEffect 0.8s 1.6s forwards";
+                setTimeout(() => {
+                    popUpBtn1.style.animation = "0";
+                    popUpBtn2.style.animation = "0";
+                    popUpBtn3.style.animation = "0";
+                }, 2400);
                 break;
             case 2:
                 popUpBtn1.style.visibility = "hidden";
                 popUpBtn2.style.visibility = "hidden";
                 popUpBtn3.style.visibility = "hidden";
+                break;
+            case 5:
+                continueBtn.style.visibility = "visible";
+                nextBtn.style.visibility = "hidden";
                 break;
             default:
                 break;
@@ -86,6 +100,9 @@ function GoBack() {
             popUpBtn2.style.visibility = "visible";
             popUpBtn3.style.visibility = "visible";
             break;
+        case 4:
+            continueBtn.style.visibility = "hidden";
+            break;
         default:
             break;
     }
@@ -95,24 +112,24 @@ function PopUp1() {
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.85";
     popUp1.style.visibility = "visible";
-    body.addEventListener('click', HidePopUp, true);
+    body.addEventListener("click" , ExitPopUp , true);
 }
 
 function PopUp2() {
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.85";
     popUp2.style.visibility = "visible";
-    body.addEventListener('click', HidePopUp, true);
+    body.addEventListener("click" , ExitPopUp, true);
 }
 
 function PopUp3() {
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.85";
     popUp3.style.visibility = "visible";
-    body.addEventListener('click', HidePopUp, true);
+    body.addEventListener("click" , ExitPopUp, true);
 }
 
-function HidePopUp() {
+function ExitPopUp() {
     blackBackground.style.visibility = "hidden";
     popUp1.style.visibility = "hidden";
     popUp2.style.visibility = "hidden";

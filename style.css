@@ -48,3 +48,99 @@
     z-index: 10;
 }
 
+#redDot1 {
+    position: absolute;
+    left: 7.7vw;
+    top: 74.6vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot2 {
+    position: absolute;
+    left: 17.8vw;
+    top: 72.2vh;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#redDot3 {
+    position: absolute;
+    left: 20.3vw;
+    top: 61vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot4 {
+    position: absolute;
+    left: 23.6vw;
+    top: 51.7vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot5 {
+    position: absolute;
+    left: 33.2vw;
+    top: 46vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot6 {
+    position: absolute;
+    left: 38.4vw;
+    top: 37.2vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot7 {
+    position: absolute;
+    left: 36.7vw;
+    top: 26.3vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot1:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot2:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot3:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot4:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot5:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot6:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot7:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
