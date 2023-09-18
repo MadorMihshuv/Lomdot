@@ -6,7 +6,8 @@
     overflow: hidden;
 }
 
-#startPrishaBtn {
+#startBtn {
+    background: transparent;
     visibility: hidden;
     border: none !important;
     font-size:0;
@@ -17,7 +18,12 @@
     left: 65vw;
 }
 
-#startBtn {
+#startBtn:hover { 
+    top: 88.6vh;
+}
+
+#goBtn {
+    background: transparent;
     border: none !important;
     font-size:0;
     cursor: pointer;
@@ -25,14 +31,116 @@
     position: absolute;
     top: 88vh;
     left: 65vw;
+}
+
+#goBtn:hover { 
+    top: 88.6vh;
 }
 
 #startOverBtn {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
-    left: 20vw;
+    left: 10vw;
+    bottom: 20vh;
     border: none !important;
     font-size:0;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
+}
+
+#redDot1 {
+    position: absolute;
+    left: 7.7vw;
+    top: 74.6vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot2 {
+    position: absolute;
+    left: 17.8vw;
+    top: 72.2vh;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#redDot3 {
+    position: absolute;
+    left: 20.3vw;
+    top: 61vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot4 {
+    position: absolute;
+    left: 23.6vw;
+    top: 51.7vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot5 {
+    position: absolute;
+    left: 33.2vw;
+    top: 46vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot6 {
+    position: absolute;
+    left: 38.4vw;
+    top: 37.2vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot7 {
+    position: absolute;
+    left: 36.7vw;
+    top: 26.3vh;
+    cursor: pointer;
+    visibility: hidden;
+
+}
+
+#redDot1:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot2:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot3:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot4:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot5:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot6:hover {
+    height: 2.9vw;
+    opacity: 0.85;
+}
+
+#redDot7:hover {
+    height: 2.9vw;
+    opacity: 0.85;
 }
