@@ -83,8 +83,11 @@ function GoNext() {
             HideOrShowFlowersAndText(hidden);
         }
     }
+    else if(sessionStorage.getItem("sectionNum") !== '4') {
+        window.location.href = "/MainPage.html";
+    }
     else {
-        sessionStorage.setItem("sectionNum" , 3);
+        sessionStorage.setItem("sectionNum" , 5);
         window.location.href = "/MainPage.html";
     }
 }

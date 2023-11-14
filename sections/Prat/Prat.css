@@ -31,11 +31,10 @@
         opacity: 0%;
     }
 }
-
 #nextBtn {
     position: relative;
     top: 93vh;
-    left: 17vw;
+    left: 3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -45,14 +44,14 @@
 }
 
 #nextBtn:hover { 
-    left: 16.8vw;
+    left: 2.8vw;
 }
 
 #backBtn {
     visibility: hidden;
     position: relative;
     top: 93vh;
-    left: 25vw;
+    left: 11.3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -62,13 +61,30 @@
 }
 
 #backBtn:hover { 
-    left: 25.2vw;
+    left: 11.5vw;
+}
+
+#continueBtn {
+    position: relative;
+    top: 93vh;
+    left: 3vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#continueBtn:hover { 
+    left: 2.8vw;
 }
 
 #returnBtn {
     position: relative;
     top: 93vh;
-    left: 17vw;
+    left: 3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -81,24 +97,7 @@
 }
 
 #returnBtn:hover { 
-    left: 16.8vw;
-}
-
-#continueBtn {
-    position: relative;
-    top: 93vh;
-    left: 17vw;
-    position: absolute;
-    background: transparent;
-    border: none !important;
-    font-size:0;
-    cursor: pointer;
-    z-index: 1;
-    visibility: hidden;
-}
-
-#continueBtn:hover { 
-    left: 16.8vw;
+    left: 2.8vw;
 }
 
 .bubbles {
@@ -108,50 +107,46 @@
 
 #bubble1 {
     top: 15vh;
+    width: 22vw;
     left: 25vw;
 }
 
 #bubble2 {
     top: 45vh;
     left: 2vw;
+    width: 22vw;
 }
 
 #bubble3 {
     top: 45vh;
     left: 48vw;
+    width: 22vw;
 }
 
 #bubble4 {
     top: 25vh;
     left: 72vw;
+    width: 22vw;
 }
 
 
-#bubble1:hover {
-    height: 45vh;
-    width: 25vw;
-}
-
-#bubble2:hover {
-    height: 45vh;
-    width: 25vw;
-}
-
-#bubble3:hover {
-    height: 45vh;
-    width: 25vw;
-}
-
-#bubble4:hover {
-    height: 45vh;
-    width: 25vw;
-}
+@keyframes bubblesAnimation {
+    0% { 
+        width: 22vw;
+    }
+    50% {
+        width: 23vw;
+    }
+    100% {
+        width: 22vw;
+    }
+}  
 
 #submarineLight {
     visibility: hidden;
     position: absolute;
-    top: -0.5vh;
-    left: 3vw;
+    top: -1vh;
+    left: 4.18vw;
     opacity: 0%;
     z-index: 4;
 
@@ -199,7 +194,7 @@
 #girlPearl {
     visibility: hidden;
     position: absolute;
-    left: 10vw;
+    left: 12vw;
     top: 24vh;
     cursor: pointer;
 }
@@ -207,25 +202,25 @@
 #boyPearl {
     position: absolute;
     visibility: hidden;
-    left: 55vw;
+    left: 53vw;
     cursor: pointer;
     top: 24vh;
 }
 
 #boyPearl:hover {
     content: url('/assets/Prat/זכויות\ העובד\ צדפה\ זוהרת.png');
-    height: 66vh;
+    height: 72vh;
     width: 34.7vw;
-    left: 54.5vw;
-    top: 23.5vh;
+    left: 52.5vw;
+    top: 20vh;
 }
 
 #girlPearl:hover {
     content: url('/assets/Prat/צדפה\ זכויות\ העובדת\ זוהרת.png');
-    height: 66vh;
+    height: 72vh;
     width: 34.7vw;
-    left: 9.5vw;
-    top: 23.5vh;
+    left: 11.5vw;
+    top: 20vh;
 }
 
 #jellyfish1 {
@@ -437,42 +432,38 @@
 
 #teunot1 {
     position: absolute;
-    left: 6vw;
-    top: 20vh;
+    left: 8vw;
+    top: 7vh;
     opacity: 0;
     visibility: hidden;
+    width: 40vw;
 }
 
 #teunot2 {
     position: absolute;
-    left: 6vw;
-    top: 33.5vh;
+    left: 8vw;
+    top: 23vh;
     opacity: 0;
     visibility: hidden;
+    width: 40vw;
 }
 
 #teunot3 {
     position: absolute;
-    left: 6vw;
-    top: 47vh;
+    left: 8vw;
+    top: 39vh;
     opacity: 0;
     visibility: hidden;
+    width: 40vw;
 }
 
 #teunot4 {
     position: absolute;
-    left: 6vw;
-    top: 60.5vh;
+    left: 8vw;
+    top: 55vh;
     opacity: 0;
     visibility: hidden;
-}
-
-#teunot5 {
-    position: absolute;
-    left: 6vw;
-    top: 73.5vh;
-    visibility: hidden;
-    opacity: 0;
+    width: 40vw;
 }
 
 @keyframes teunotAnimation {

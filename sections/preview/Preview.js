@@ -17,7 +17,7 @@ let popUpBtn3;
 const visible = "visible";
 const hidden = "hidden";
 
-const imageBackrounds = ['url("/assets/Preview/בואו\ נכיר.png")' ,'url("/assets/Preview/מיהו\ עובד\ צהל\ בלי\ כפתורים.png")','url("/assets/Preview/דרגות\ תקן.png")', 'url("/assets/Preview/עבודה\ עם\ מערכות\ צהל.png")' , 'url("/assets/Preview/דור\ א\ דור\ ב.png")' , 'url("/assets/Preview/כניסה\ לקביעות.png")'];
+const imageBackrounds = ['url("/assets/Preview/בואו\ נכיר.png")' , 'url("/assets/Preview/תחומי\ האחריות\ של\ מרכז\ תעצ.png")' ,'url("/assets/Preview/מיהו\ עובד\ צהל\ בלי\ כפתורים.png")','url("/assets/Preview/דרגות\ תקן.png")', 'url("/assets/Preview/עבודה\ עם\ מערכות\ צהל.png")' , 'url("/assets/Preview/דור\ א\ דור\ ב.png")' , 'url("/assets/Preview/כניסה\ לקביעות.png")'];
 
 
 //Onload function
@@ -48,10 +48,10 @@ function Load() {
 function GoNext() {
     pageNum++;
     backBtn.style.visibility = "visible";
-    if(pageNum !== 6){
+    if(pageNum !== 7){
         body.style.backgroundImage = `${imageBackrounds[pageNum]}`;
         switch(pageNum) {
-            case 1:
+            case 2:
                 popUpBtn1.style.visibility = "visible";
                 popUpBtn2.style.visibility = "visible";
                 popUpBtn3.style.visibility = "visible";
@@ -64,18 +64,21 @@ function GoNext() {
                     popUpBtn3.style.animation = "0";
                 }, 2400);
                 break;
-            case 2:
+            case 3:
                 popUpBtn1.style.visibility = "hidden";
                 popUpBtn2.style.visibility = "hidden";
                 popUpBtn3.style.visibility = "hidden";
                 break;
-            case 5:
+            case 6:
                 continueBtn.style.visibility = "visible";
                 nextBtn.style.visibility = "hidden";
                 break;
             default:
                 break;
         }
+    }
+    else if(sessionStorage.getItem("sectionNum") !== '1') {
+        window.location.href = "/MainPage.html";
     }
     else {
         sessionStorage.setItem("sectionNum" , 2);
@@ -88,19 +91,21 @@ function GoBack() {
     pageNum--;
     body.style.backgroundImage = `${imageBackrounds[pageNum]}`;
     nextBtn.style.visibility = "visible";
+    console.log(pageNum);
     switch(pageNum) {
         case 0:
             backBtn.style.visibility = "hidden";
+        case 1:
             popUpBtn1.style.visibility = "hidden";
             popUpBtn2.style.visibility = "hidden";
             popUpBtn3.style.visibility = "hidden";
             break;
-        case 1:
+        case 2:
             popUpBtn1.style.visibility = "visible";
             popUpBtn2.style.visibility = "visible";
             popUpBtn3.style.visibility = "visible";
             break;
-        case 4:
+        case 5:
             continueBtn.style.visibility = "hidden";
             break;
         default:

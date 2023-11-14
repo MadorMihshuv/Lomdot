@@ -20,7 +20,6 @@ let teunot1;
 let teunot2;
 let teunot3;
 let teunot4;
-let teunot5;
 
 let bubble1;
 let bubble2;
@@ -44,7 +43,7 @@ let starFish4;
 const visible = "visible";
 const hidden = "hidden";
 
-const imageBackrounds = ['url("/assets/Prat/אינדיקציות\ שנתיות.png")' ,'url("/assets/Prat/ימי\ השתלמות\ בשכר.png")','url("/assets/Prat/היתר\ עבודה\ פרטית\ בלי\ בועות.png")', 'url("/assets/Prat/זכויות\ בחופשתת\ לידה.png")', 'url("/assets/Prat/חלת\ לאחר\ חלד.png")', 'url("/assets/Prat/זכויות\ הורה.png")', 'url("/assets/Prat/אחזקת\ רכב\ בלי\ צוללת.png")', 'url("/assets/Prat/זמן\ נסיעה\ 2.png")', 'url("/assets/Prat/רכב\ שירות.png")', 'url("/assets/Prat/הלוואות.png")' , 'url("/assets/Prat/תאונות\ עבודה\ \ 1.png")' , 'url("/assets/Prat/תאונות\ עבודה\ 2.png")'];
+const imageBackrounds = ['url("/assets/Prat/אינדיקציות\ שנתיות.png")' ,'url("/assets/Prat/ימי\ השתלמות\ בשכר.png")','url("/assets/Prat/היתר\ עבודה\ פרטית\ בלי\ בועות.png")', 'url("/assets/Prat/זכויות\ בחופשתת\ לידה.png")', 'url("/assets/Prat/חלת\ לאחר\ חלד.png")', 'url("/assets/Prat/זכויות\ הורה.png")', 'url("/assets/Prat/רכב\ שירות.png")', 'url("/assets/Prat/אחזקת\ רכב\ בלי\ צוללת.png")', 'url("/assets/Prat/זמן\ נסיעה\.png")', 'url("/assets/Prat/הלוואות.png")' , 'url("/assets/Prat/תאונות\ עבודה\ \ 1.png")' , 'url("/assets/Prat/תאונות\ עבודה\ 2.png")'];
 
 
 //Onload function
@@ -95,7 +94,6 @@ function Load() {
     teunot2 = document.getElementById("teunot2");
     teunot3 = document.getElementById("teunot3");
     teunot4 = document.getElementById("teunot4");
-    teunot5 = document.getElementById("teunot5");
 }
 
 //Loads the next page of the section
@@ -112,12 +110,17 @@ function GoNext() {
             case 2:
                 coffee.style.visibility = "hidden";
                 HideOrShowBubbles(visible);
+                bubble1.style.animation = "bubblesAnimation 0.8s forwards";
+                bubble2.style.animation = "bubblesAnimation 0.8s 0.8s forwards";
+                bubble3.style.animation = "bubblesAnimation 0.8s 1.6s forwards";
+                bubble4.style.animation = "bubblesAnimation 0.8s 2.4s forwards";
+
                 break;
             case 3:
                 HideOrShowBubbles(hidden);
                 boyPearl.style.visibility = "visible";
                 girlPearl.style.visibility = "visible";
-                PageThreeDisabkedButtonCheck();   
+                nextBtn.style.visibility = "hidden";
                 break;
             case 4:
                 boyPearl.style.visibility = "hidden";
@@ -128,7 +131,7 @@ function GoNext() {
             case 5:
                 HideOrShowHalad(hidden);
                 break;
-            case 6:
+            case 7:
                 blackBackground.style.visibility = "visible";
                 blackBackground.style.opacity = "0.8";
                 blackBackground.style.animation = "lightUp 2s forwards";
@@ -136,19 +139,16 @@ function GoNext() {
                 submarineLight.style.visibility = "visible";
                 submarine.style.animation = "submarineComeIn 2s forwards";
                 submarineLight.style.animation = "showLight 1.5s 1.5s forwards";
-                nextBtn.disabled = true;
-                setTimeout(() => {
-                    nextBtn.disabled = false;
-                }, 2200);
                 break;
-            case 7:
+            case 8:
+                blackBackground.style.visibility = "hidden";
                 jellyfish1.style.visibility = "visible";
                 jellyfish2.style.visibility = "visible";
                 jellyfish3.style.visibility = "visible";
                 submarine.style.visibility = "hidden";
                 submarineLight.style.visibility = "hidden";
                 break;
-            case 8:
+            case 9:
                 jellyfish1.style.visibility = "hidden";
                 jellyfish2.style.visibility = "hidden";
                 jellyfish3.style.visibility = "hidden";
@@ -159,7 +159,6 @@ function GoNext() {
                 teunot2.style.animation = "teunotAnimation 0.7s 0.7s forwards";
                 teunot3.style.animation = "teunotAnimation 0.7s 1.4s forwards";
                 teunot4.style.animation = "teunotAnimation 0.7s 2.1s forwards";
-                teunot5.style.animation = "teunotAnimation 0.7s 2.8s forwards";
                 break;
             case 11:
                 HideOrShowTeunot(hidden);
@@ -170,8 +169,11 @@ function GoNext() {
                 break;
         }
     }
+    else if(sessionStorage.getItem("sectionNum") !== '5') {
+        window.location.href = "/MainPage.html";
+    }
     else {
-        sessionStorage.setItem("sectionNum" , 4);
+        sessionStorage.setItem("sectionNum" , 6);
         window.location.href = "/MainPage.html";
     }
 }
@@ -198,23 +200,24 @@ function GoBack() {
         case 3:
             boyPearl.style.visibility = "visible";
             girlPearl.style.visibility = "visible";
+            nextBtn.style.visibility = "visible";
             HideOrShowHalad(hidden);
             break;
         case 4:
             HideOrShowHalad(visible);
             break;
-        case 5:
+        case 6:
             submarine.style.visibility = "hidden";
             submarineLight.style.visibility = "hidden";
             break;
-        case 6:
+        case 7:
             submarine.style.visibility = "visible";
             submarineLight.style.visibility = "visible";
             jellyfish1.style.visibility = "hidden";
             jellyfish2.style.visibility = "hidden";
             jellyfish3.style.visibility = "hidden";
             break;
-        case 7:
+        case 8:
             jellyfish1.style.visibility = "visible";
             jellyfish2.style.visibility = "visible";
             jellyfish3.style.visibility = "visible";
@@ -228,15 +231,6 @@ function GoBack() {
             break;
         default:
             break;
-    }
-}
-
-function PageThreeDisabkedButtonCheck () {
-    if(zhuyotCheckOved && zhuyotCheckOvedet){
-        nextBtn.disabled = false;
-    }
-    else {
-        nextBtn.disabled = true;
     }
 }
 
@@ -263,7 +257,6 @@ function HideOrShowTeunot(hideOrShow) {
     teunot2.style.visibility = `${hideOrShow}`;
     teunot3.style.visibility = `${hideOrShow}`;
     teunot4.style.visibility = `${hideOrShow}`;
-    teunot5.style.visibility = `${hideOrShow}`;
 }
 
 function HideOrShowHalad(hideOrShow) {
@@ -286,7 +279,6 @@ function zhuyotOvedPage() {
     nextBtn.style.visibility = "hidden";
     backBtn.style.visibility = "hidden";
     zhuyotCheckOved = true;
-    PageThreeDisabkedButtonCheck();
 }
 
 function zhuyotOvedetPage() {
@@ -297,15 +289,19 @@ function zhuyotOvedetPage() {
     nextBtn.style.visibility = "hidden";
     backBtn.style.visibility = "hidden";
     zhuyotCheckOvedet = true;
-    PageThreeDisabkedButtonCheck();
 }
 
 
 function ReturnBack() {
     body.style.backgroundImage = `${imageBackrounds[pageNum]}`;
     returnBtn.style.visibility = "hidden";
-    nextBtn.style.visibility = "visible";
     backBtn.style.visibility = "visible";
     girlPearl.style.visibility = "visible";
     boyPearl.style.visibility = "visible";
+    if(zhuyotCheckOved && zhuyotCheckOvedet){
+        nextBtn.style.visibility = "visible";
+    }
+    else {
+        nextBtn.style.visibility = "hidden";
+    }
 }

@@ -2,7 +2,6 @@ let thailandMan;
 let thailandPopUp;
 let body;
 let blackBackground;
-let firstSpeechBubble;
 
 let tivitBtn;
 let mukdemetBtn;
@@ -37,7 +36,7 @@ let check5;
 let ifChecked = [false , false, false, false, false];
 
 let sectionsCount = 0;
-const imageBackrounds = ['url("/assets/פרישה\ טבעית.png")','url("/assets/פרישה\ מוקדמת.png")','url("/assets/פרישת\ נכות.png")', 'url("/assets/התפטרות\ מרצון.png")', 'url("/assets/פיטורים\ 1.png")', 'url("/assets/פיטורים\ 2.png")'];
+const imageBackrounds = ['url("/assets/Prisha/פרישה\ טבעית.png")','url("/assets/Prisha/פרישה\ מוקדמת.png")','url("/assets/Prisha/פרישת\ נכות.png")', 'url("/assets/Prisha/התפטרות\ מרצון.png")', 'url("/assets/Prisha/פיטורים\ 1.png")', 'url("/assets/Prisha/פיטורים\ 2.png")'];
 
 
 //Onload function
@@ -94,13 +93,11 @@ function Load(){
     thailandPopUp = document.getElementById("thailandPopUp");
     body = document.getElementById("body");
     blackBackground = document.getElementById("blackBackground");
-    firstSpeechBubble = document.getElementById("firstSpeechBubble");
 };
 
 //What happens every time we enter a new page
 function NextPage() {
     continueBtn.style.visibility = "hidden";
-    firstSpeechBubble.style.visibility = "hidden";
     tivitBtn.style.visibility = "hidden";
     backBtn.style.visibility = "visible";
     sectionsCount++;
@@ -109,7 +106,7 @@ function NextPage() {
 
 //What happens every time we enter a new page
 function GoBack() {
-    body.style.backgroundImage = 'url("/assets/סוגי\ סיום\ העסקה.png")';
+    body.style.backgroundImage = 'url("/assets/Prisha/סוגי\ סיום\ העסקה.png")';
     backBtn.style.visibility = "hidden";
     kodem.style.visibility = "hidden";
     thailandMan.style.visibility = "hidden";
@@ -133,8 +130,8 @@ function backBtnFunc() {
 }
 
 function Finish() {
-    sessionStorage.setItem("sectionNum" , 5);
-    window.location.href = "/MainPage.html";    
+    sessionStorage.setItem("sectionNum" , 8);
+    window.location.href = "/MainPage.html";
 }
 
 //Checks which chapters are done

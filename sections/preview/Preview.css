@@ -36,7 +36,7 @@
 #nextBtn {
     position: relative;
     top: 93vh;
-    left: 19vw;
+    left: 3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -46,14 +46,14 @@
 }
 
 #nextBtn:hover { 
-    left: 18.8vw;
+    left: 2.8vw;
 }
 
 #backBtn {
     visibility: hidden;
     position: relative;
     top: 93vh;
-    left: 27vw;
+    left: 11.3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -63,13 +63,13 @@
 }
 
 #backBtn:hover { 
-    left: 27.2vw;
+    left: 11.5vw;
 }
 
 #continueBtn {
     position: relative;
     top: 93vh;
-    left: 19vw;
+    left: 3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -80,7 +80,7 @@
 }
 
 #continueBtn:hover { 
-    left: 18.8vw;
+    left: 2.8vw;
 }
 
 .popUp {
@@ -99,8 +99,8 @@
     position: absolute;
     cursor: pointer;
     z-index: 1;
-    top: 72vh;
-    left: 62vw;
+    top: 63vh;
+    left: 60vw;
 }
 
 #popUpBtn2 {
@@ -111,8 +111,8 @@
     position: absolute;
     cursor: pointer;
     z-index: 1;
-    top: 72vh;
-    left: 42vw;
+    top: 63vh;
+    left: 40vw;
 }
 
 #popUpBtn3 {
@@ -123,30 +123,30 @@
     cursor: pointer;
     z-index: 1;
     position: absolute;
-    top: 72vh;
-    left: 22vw;
+    top: 63vh;
+    left: 20vw;
 }
 
 #popUpBtn1:hover {
-    top: 72.8vh;
+    top: 63.8vh;
 }
 
 #popUpBtn2:hover {
-    top: 72.8vh;
+    top: 63.8vh;
 }
 
 #popUpBtn3:hover {
-    top: 72.8vh;
+    top: 63.8vh;
 }
 
 @keyframes haasakaEffect {
     0% { 
-        top: 72vh;
+        top: 63vh;
     }
     50% {
-        top: 71vh;
+        top: 62vh;
     }
     100% {
-        top: 72vh;
+        top: 63vh;
     }
 }

@@ -36,7 +36,7 @@
 #nextBtn {
     position: relative;
     top: 93vh;
-    left: 19vw;
+    left: 3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -45,32 +45,15 @@
     z-index: 1;
 }
 
-#nextBtn:hover {
-    left: 18.8vw;
-}
-
-#continueBtn {
-    position: relative;
-    top: 93vh;
-    left: 19vw;
-    position: absolute;
-    background: transparent;
-    border: none !important;
-    font-size:0;
-    cursor: pointer;
-    z-index: 1;
-    visibility: hidden;
-}
-
-#continueBtn:hover {
-    left: 18.8vw;
+#nextBtn:hover { 
+    left: 2.8vw;
 }
 
 #backBtn {
     visibility: hidden;
     position: relative;
     top: 93vh;
-    left: 27vw;
+    left: 11.3vw;
     position: absolute;
     background: transparent;
     border: none !important;
@@ -79,8 +62,25 @@
     z-index: 1;
 }
 
-#backBtn:hover {
-    left: 27.2vw;
+#backBtn:hover { 
+    left: 11.5vw;
+}
+
+#continueBtn {
+    position: relative;
+    top: 93vh;
+    left: 3vw;
+    position: absolute;
+    background: transparent;
+    border: none !important;
+    font-size:0;
+    cursor: pointer;
+    z-index: 1;
+    visibility: hidden;
+}
+
+#continueBtn:hover { 
+    left: 2.8vw;
 }
 
 #log1 {
