@@ -84,7 +84,7 @@ function GoNext() {
         }
     }
     else {
-        sessionStorage.setItem("sectionNum" , 3);
+        sessionStorage.setItem("sectionNum" , 4);
         window.location.href = "/MainPage.html";
     }
 }

@@ -117,7 +117,7 @@ function GoNext() {
                 HideOrShowBubbles(hidden);
                 boyPearl.style.visibility = "visible";
                 girlPearl.style.visibility = "visible";
-                PageThreeDisabkedButtonCheck();   
+                nextBtn.style.visibility = "hidden";
                 break;
             case 4:
                 boyPearl.style.visibility = "hidden";
@@ -171,7 +171,7 @@ function GoNext() {
         }
     }
     else {
-        sessionStorage.setItem("sectionNum" , 4);
+        sessionStorage.setItem("sectionNum" , 5);
         window.location.href = "/MainPage.html";
     }
 }
@@ -231,15 +231,6 @@ function GoBack() {
     }
 }
 
-function PageThreeDisabkedButtonCheck () {
-    if(zhuyotCheckOved && zhuyotCheckOvedet){
-        nextBtn.disabled = false;
-    }
-    else {
-        nextBtn.disabled = true;
-    }
-}
-
 function AnimationOfHalad() {
     starFish1.style.animation = "starfish1Animation 2.5s forwards";
     starFish2.style.animation = "starfish2Animation 2.5s 1s forwards";
@@ -286,7 +277,6 @@ function zhuyotOvedPage() {
     nextBtn.style.visibility = "hidden";
     backBtn.style.visibility = "hidden";
     zhuyotCheckOved = true;
-    PageThreeDisabkedButtonCheck();
 }
 
 function zhuyotOvedetPage() {
@@ -297,15 +287,16 @@ function zhuyotOvedetPage() {
     nextBtn.style.visibility = "hidden";
     backBtn.style.visibility = "hidden";
     zhuyotCheckOvedet = true;
-    PageThreeDisabkedButtonCheck();
 }
 
 
 function ReturnBack() {
     body.style.backgroundImage = `${imageBackrounds[pageNum]}`;
     returnBtn.style.visibility = "hidden";
-    nextBtn.style.visibility = "visible";
     backBtn.style.visibility = "visible";
     girlPearl.style.visibility = "visible";
     boyPearl.style.visibility = "visible";
+    if(zhuyotCheckOved && zhuyotCheckOvedet) {
+        nextBtn.style.visibility = "visible";
+    }
 }

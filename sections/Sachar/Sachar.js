@@ -17,12 +17,23 @@ let popUpBtn3;
 const visible = "visible";
 const hidden = "hidden";
 
-const imageBackrounds = ['url("/assets/Preview/בואו\ נכיר.png")' ,'url("/assets/Preview/מיהו\ עובד\ צהל\ בלי\ כפתורים.png")','url("/assets/Preview/דרגות\ תקן.png")', 'url("/assets/Preview/עבודה\ עם\ מערכות\ צהל.png")' , 'url("/assets/Preview/דור\ א\ דור\ ב.png")' , 'url("/assets/Preview/כניסה\ לקביעות.png")'];
+const imageBackrounds = ['url("/assets/Sachar/תוספות\ והסכמי\ שכר\ בלי\ כוכבים.png")' ,'url("/assets/Sachar/שעות\ העסקה.png")','url("/assets/Sachar/שעות\ נוספות.png")'];
 
 
 //Onload function
 window.onload = function() {
     Load();
+    popUpBtn1.style.visibility = "visible";
+    popUpBtn2.style.visibility = "visible";
+    popUpBtn3.style.visibility = "visible";
+    popUpBtn1.style.animation = "haasakaEffect 0.8s 0.5s forwards";
+    popUpBtn2.style.animation = "haasakaEffect 0.8s 1.3s forwards";
+    popUpBtn3.style.animation = "haasakaEffect 0.8s 2.1s forwards";
+    setTimeout(() => {
+        popUpBtn1.style.animation = "0";
+        popUpBtn2.style.animation = "0";
+        popUpBtn3.style.animation = "0";
+    }, 3000);
     blackBackground.style.animation = "hideBackground 1.5s";
 }
 
@@ -48,28 +59,16 @@ function Load() {
 function GoNext() {
     pageNum++;
     backBtn.style.visibility = "visible";
-    if(pageNum !== 6){
+    if(pageNum !== 3){
         body.style.backgroundImage = `${imageBackrounds[pageNum]}`;
         switch(pageNum) {
             case 1:
-                popUpBtn1.style.visibility = "visible";
-                popUpBtn2.style.visibility = "visible";
-                popUpBtn3.style.visibility = "visible";
-                popUpBtn1.style.animation = "haasakaEffect 0.8s forwards";
-                popUpBtn2.style.animation = "haasakaEffect 0.8s 0.8s forwards";
-                popUpBtn3.style.animation = "haasakaEffect 0.8s 1.6s forwards";
-                setTimeout(() => {
-                    popUpBtn1.style.animation = "0";
-                    popUpBtn2.style.animation = "0";
-                    popUpBtn3.style.animation = "0";
-                }, 2400);
-                break;
-            case 2:
                 popUpBtn1.style.visibility = "hidden";
                 popUpBtn2.style.visibility = "hidden";
                 popUpBtn3.style.visibility = "hidden";
+
                 break;
-            case 5:
+            case 2:
                 continueBtn.style.visibility = "visible";
                 nextBtn.style.visibility = "hidden";
                 break;
