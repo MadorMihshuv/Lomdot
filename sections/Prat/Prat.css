@@ -1,5 +1,6 @@
 #body {
     background-image: url(/assets/Prat/אינדיקציות\ שנתיות.png);
+    /* background-image: url(/assets/Prat/רקע\ פרט.png); */
     background-size: 100vw 100vh;
     background-repeat: no-repeat;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     margin: 0; 
@@ -7,6 +8,37 @@
     overflow: hidden;
     z-index: 1;
     user-select: none;
+}
+
+#pratBackground {
+    z-index: 5;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#questionBackground {
+    z-index: 6;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+@keyframes fadeInQuestions {
+    0% { 
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 #blackBackground {
@@ -41,6 +73,8 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #nextBtn:hover { 
@@ -58,6 +92,8 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #backBtn:hover { 
@@ -75,6 +111,8 @@
     cursor: pointer;
     z-index: 1;
     visibility: hidden;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #continueBtn:hover { 
@@ -82,6 +120,7 @@
 }
 
 #returnBtn {
+    visibility: hidden;
     position: relative;
     top: 93vh;
     left: 3vw;
@@ -91,9 +130,8 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
-    visibility: hidden;
-    height: 5vh;
-    width: 10vw;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #returnBtn:hover { 
@@ -109,23 +147,27 @@
     top: 15vh;
     width: 22vw;
     left: 25vw;
+    height: 45vh;
 }
 
 #bubble2 {
     top: 45vh;
     left: 2vw;
     width: 22vw;
+    height: 45vh;
 }
 
 #bubble3 {
     top: 45vh;
     left: 48vw;
     width: 22vw;
+    height: 45vh;
 }
 
 #bubble4 {
     top: 25vh;
     left: 72vw;
+    height: 45vh;
     width: 22vw;
 }
 
@@ -133,23 +175,23 @@
 @keyframes bubblesAnimation {
     0% { 
         width: 22vw;
-    }
-    50% {
-        width: 23vw;
+        height: 45vh;
     }
     100% {
-        width: 22vw;
+        width: 23vw;
+        height: 47vh;
     }
 }  
 
 #submarineLight {
     visibility: hidden;
     position: absolute;
-    top: -1vh;
-    left: 4.18vw;
+    top: -3.7vh;
+    left: 3vw;
     opacity: 0%;
     z-index: 4;
-
+    width: 28vw;
+    height: 50vh;
 }
 
 #submarine {
@@ -159,6 +201,7 @@
     height: 70vh;
     right: 90vw;
     z-index: 3;
+    width: 34vw;
 }
 
 @keyframes submarineComeIn {
@@ -197,6 +240,8 @@
     left: 12vw;
     top: 24vh;
     cursor: pointer;
+    width: 35vw;
+    height: 65vh;
 }
 
 #boyPearl {
@@ -205,20 +250,22 @@
     left: 53vw;
     cursor: pointer;
     top: 24vh;
+    width: 35vw;
+    height: 65.5vh;
 }
 
 #boyPearl:hover {
     content: url('/assets/Prat/זכויות\ העובד\ צדפה\ זוהרת.png');
+    width: 36vw;
     height: 72vh;
-    width: 34.7vw;
     left: 52.5vw;
     top: 20vh;
 }
 
 #girlPearl:hover {
     content: url('/assets/Prat/צדפה\ זכויות\ העובדת\ זוהרת.png');
+    width: 36vw;
     height: 72vh;
-    width: 34.7vw;
     left: 11.5vw;
     top: 20vh;
 }
@@ -230,6 +277,8 @@
     visibility: hidden;
     opacity: 0.75;
     transform: rotate(5deg);
+    width: 17vw;
+    height: 44vh;
 }
 
 #jellyfish2 {
@@ -240,6 +289,8 @@
     height: 35vh;
     opacity: 0.75;
     transform: rotate(10deg);
+    width: 12vw;
+    height: 34vh;
 }
 
 #jellyfish3 {
@@ -250,6 +301,8 @@
     height: 24vh;
     opacity: 0.75;
     transform: rotate(-10deg);
+    width: 9vw;
+    height: 18vh;
 }
 
 #coffee {
@@ -258,6 +311,8 @@
     transform: rotate(-20deg);
     visibility: hidden;
     top: 19vh;
+    height: 20vh;
+    width: 10vw;
 }
 
 @keyframes fadeCoffee {
@@ -275,6 +330,8 @@
     top: 22vh;
     visibility: hidden;
     opacity: 0;
+    width: 90.8vw;
+    height: 19vh;
 }
 
 #halad2 {
@@ -283,6 +340,8 @@
     top: 31vh;
     visibility: hidden;
     opacity: 0;
+    width: 90.8vw;
+    height: 19vh;
 }
 
 #halad3 {
@@ -291,14 +350,18 @@
     visibility: hidden;
     top: 43vh;
     opacity: 0;
+    width: 90.8vw;
+    height: 19vh;
 }
 
 #halad4 {
     position: absolute;
     left: 2vw;
-    top: 55vh;
+    top: 54.5vh;
     visibility: hidden;
     opacity: 0;
+    width: 95.5vw;
+    height: 19vh;
 }
 
 #starFish1 {
@@ -437,6 +500,7 @@
     opacity: 0;
     visibility: hidden;
     width: 40vw;
+    height: 56vh;
 }
 
 #teunot2 {
@@ -446,6 +510,7 @@
     opacity: 0;
     visibility: hidden;
     width: 40vw;
+    height: 56vh;
 }
 
 #teunot3 {
@@ -455,6 +520,7 @@
     opacity: 0;
     visibility: hidden;
     width: 40vw;
+    height: 56vh;
 }
 
 #teunot4 {
@@ -464,6 +530,7 @@
     opacity: 0;
     visibility: hidden;
     width: 40vw;
+    height: 56vh;
 }
 
 @keyframes teunotAnimation {

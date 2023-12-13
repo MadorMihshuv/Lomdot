@@ -2,6 +2,7 @@ let backBtn;
 let nextBtn;
 let continueBtn;
 
+let osBackground;
 let blackBackground;
 let body;
 
@@ -19,13 +20,11 @@ let secondSnow3;
 let ice1;
 let ice2;
 let ice3;
-let ice4;
 
 let title;
 let text1;
 let text2;
 let text3;
-let text4;
 
 let secondTitle;
 let secondText1;
@@ -40,14 +39,21 @@ const imageBackrounds = ['url("/assets/Os/השירות\ הסוציאלי.png")' 
 //Onload function
 window.onload = function() {
     Load();
+    history.pushState(null,null, location.href);
+
     blackBackground.style.animation = "hideBackground 1.5s";
 }
+
+window.onpopstate = function(event) {
+    history.go(1);
+};
 
 //Onload function
 function Load() {
     pageNum = 0;
     body = document.getElementById("body");
     blackBackground = document.getElementById("blackBackground");
+    osBackground = document.getElementById("osBackground");
 
     backBtn = document.getElementById("backBtn");
     nextBtn = document.getElementById("nextBtn");
@@ -117,7 +123,13 @@ function GoNext() {
     }
     else {
         sessionStorage.setItem("sectionNum" , 7);
-        window.location.href = "/MainPage.html";
+        osBackground.style.visibility = "visible";
+        questionBackground.style.visibility = "visible";
+        questionBackground.style.animation = "fadeInQuestions 1.5s forwards";
+        setTimeout(() => {
+            questionBackground.style.visibility = "hidden";
+            window.location.href = "/Exercise/Exercise.html";
+        }, 3000);
     }
 }
 
@@ -154,23 +166,19 @@ function HideOrShowSnowAndText(hideOrShow) {
     snow1.style.visibility = `${hideOrShow}`;
     snow2.style.visibility = `${hideOrShow}`;
     snow3.style.visibility = `${hideOrShow}`;
-    snow4.style.visibility = `${hideOrShow}`;
 
     title.style.visibility = `${hideOrShow}`;
     text1.style.visibility = `${hideOrShow}`;
     text2.style.visibility = `${hideOrShow}`;
     text3.style.visibility = `${hideOrShow}`;
-    text4.style.visibility = `${hideOrShow}`;
 
     title.style.animation = "textFadeIn 1s forwards";
     text1.style.animation = "textFadeIn 1s 1s forwards";
     text2.style.animation = "textFadeIn 1s 2s forwards";
     text3.style.animation = "textFadeIn 1s 3s forwards";
-    text4.style.animation = "textFadeIn 1s 4s forwards";
     snow1.style.animation = "snowAnimation 1s 1s forwards";
     snow2.style.animation = "snowAnimation 1s 2s forwards";
     snow3.style.animation = "snowAnimation 1s 3s forwards";
-    snow4.style.animation = "snowAnimation 1s 4s forwards";
 }
 
 function HideOrShowSecondSnowAndText(hideOrShow) {

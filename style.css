@@ -36,7 +36,9 @@
     cursor: pointer;
     position: absolute;
     top: 80vh;
-    left: 67vw;
+    left: 66vw;
+    width: 15vw;
+    height: 10vh;
 }
 
 #startBtn:hover { 
@@ -45,23 +47,6 @@
 
 #startBtnImg {
     height: 13vh;
-}
-
-#goBtn {
-    background: transparent;
-    border: none !important;
-    font-size:0;
-    cursor: pointer;
-    z-index: 5;
-    position: absolute;
-    top: 60vh;
-    left: 65vw;
-    width: 5vw;
-
-}
-
-#goBtn:hover { 
-    top: 60.6vh;
 }
 
 #redDot1 {

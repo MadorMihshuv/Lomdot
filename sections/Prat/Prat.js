@@ -7,6 +7,7 @@ let zhuyotCheckOvedet;
 
 let coffee;
 let blackBackground;
+let pratBackground;
 let body;
 
 let submarine;
@@ -49,8 +50,13 @@ const imageBackrounds = ['url("/assets/Prat/אינדיקציות\ שנתיות.p
 //Onload function
 window.onload = function() {
     Load();
+    history.pushState(null,null, location.href);
     blackBackground.style.animation = "hideBackground 1.5s";
 }
+
+window.onpopstate = function(event) {
+    history.go(1);
+};
 
 //Onload function
 function Load() {
@@ -72,6 +78,7 @@ function Load() {
     returnBtn = document.getElementById("returnBtn");
     continueBtn = document.getElementById("continueBtn");
     blackBackground = document.getElementById("blackBackground");
+    pratBackground = document.getElementById("pratBackground");
 
     bubble1 = document.getElementById("bubble1");
     bubble2 = document.getElementById("bubble2");
@@ -120,7 +127,12 @@ function GoNext() {
                 HideOrShowBubbles(hidden);
                 boyPearl.style.visibility = "visible";
                 girlPearl.style.visibility = "visible";
-                nextBtn.style.visibility = "hidden";
+                if(zhuyotCheckOved && zhuyotCheckOvedet){
+                    nextBtn.style.visibility = "visible";
+                }
+                else {
+                    nextBtn.style.visibility = "hidden";
+                }
                 break;
             case 4:
                 boyPearl.style.visibility = "hidden";
@@ -174,7 +186,13 @@ function GoNext() {
     }
     else {
         sessionStorage.setItem("sectionNum" , 6);
-        window.location.href = "/MainPage.html";
+        pratBackground.style.visibility = "visible";
+        questionBackground.style.visibility = "visible";
+        questionBackground.style.animation = "fadeInQuestions 1.5s forwards";
+        setTimeout(() => {
+            questionBackground.style.visibility = "hidden";
+            window.location.href = "/Exercise/Exercise.html";
+        }, 3000);
     }
 }
 

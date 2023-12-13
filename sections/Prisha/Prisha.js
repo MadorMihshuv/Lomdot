@@ -2,6 +2,7 @@ let thailandMan;
 let thailandPopUp;
 let body;
 let blackBackground;
+let prishaBackground;
 
 let tivitBtn;
 let mukdemetBtn;
@@ -22,6 +23,7 @@ let shimuaPopUp;
 let protokolPopUp;
 let decisionPopUp;
 let lawPopUp;
+let dismissalEntered;
 
 let continueBtn;
 let backBtn;
@@ -33,6 +35,11 @@ let check3;
 let check4;
 let check5;
 
+let firstEntered;
+let secondEntered;
+let thirdEntered;
+let fourthEntered;
+
 let ifChecked = [false , false, false, false, false];
 
 let sectionsCount = 0;
@@ -42,6 +49,7 @@ const imageBackrounds = ['url("/assets/Prisha/פרישה\ טבעית.png")','url
 //Onload function
 window.onload = function() {
     Load();
+    history.pushState(null,null, location.href);
     DisableAndEnableButtons(true);
     blackBackground.style.animation = "hideBackground 1.5s";
     setTimeout(() => {
@@ -49,6 +57,10 @@ window.onload = function() {
         blackBackground.style.visibility = "hidden";
     }, 1500);
 }
+
+window.onpopstate = function(event) {
+    history.go(1);
+};
 
 
 //Disables or enables main buttons
@@ -93,6 +105,7 @@ function Load(){
     thailandPopUp = document.getElementById("thailandPopUp");
     body = document.getElementById("body");
     blackBackground = document.getElementById("blackBackground");
+    prishaBackground = document.getElementById("prishaBackground");
 };
 
 //What happens every time we enter a new page
@@ -131,7 +144,13 @@ function backBtnFunc() {
 
 function Finish() {
     sessionStorage.setItem("sectionNum" , 8);
-    window.location.href = "/MainPage.html";
+    prishaBackground.style.visibility = "visible";
+    questionBackground.style.visibility = "visible";
+    questionBackground.style.animation = "fadeInQuestions 1.5s forwards";
+    setTimeout(() => {
+        questionBackground.style.visibility = "hidden";
+        window.location.href = "/Exercise/Exercise.html";
+    }, 3000);
 }
 
 //Checks which chapters are done
@@ -147,6 +166,7 @@ function CheckWhatFinished() {
     }
     if(ifChecked[3]) {
         check4.style.visibility = "visible";
+        dismissalEntered = true;
     }
     if(ifChecked[4]) {
         check5.style.visibility = "visible";
@@ -212,10 +232,17 @@ function DismissalPage() {
 function DismissalSecondPage() {
     NextPage();
     kodem.style.visibility = "visible";
+    back.style.visibility = "hidden";
     allDismissalButtons.style.visibility = "visible";
     dismissalBtnHideOrShow(visible);
     body.style.backgroundImage = `${imageBackrounds[5]}`;
     ifChecked[3] = true;
+    if(dismissalEntered) {
+        back.style.visibility = "visible";
+    }
+    else {
+        back.style.visibility = "hidden";
+    }
 }
 
 function dismissalBtnHideOrShow(showOrHide) {
@@ -233,6 +260,7 @@ function ResignationPage() {
 }
 
 function ShimuaPopUp() {
+    firstEntered = true;
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.8";
     shimuaPopUp.style.visibility = "visible";
@@ -240,6 +268,7 @@ function ShimuaPopUp() {
 }
 
 function ProtokolPopUp() {
+    secondEntered = true;
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.8";
     protokolPopUp.style.visibility = "visible";
@@ -247,6 +276,7 @@ function ProtokolPopUp() {
 }
 
 function DecisionPopUp() {
+    thirdEntered = true;
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.8";
     decisionPopUp.style.visibility = "visible";
@@ -254,6 +284,7 @@ function DecisionPopUp() {
 }
 
 function LawPopUp() {
+    fourthEntered = true;
     blackBackground.style.visibility = "visible";
     blackBackground.style.opacity = "0.8";
     lawPopUp.style.visibility = "visible";
@@ -266,4 +297,10 @@ function HidePopUp() {
     decisionPopUp.style.visibility = "hidden";
     protokolPopUp.style.visibility = "hidden";
     lawPopUp.style.visibility = "hidden";
+    if((fourthEntered && thirdEntered && secondEntered && firstEntered)) {
+        back.style.visibility = "visible";
+    }
+    else {
+        back.style.visibility = "hidden";
+    }
 }

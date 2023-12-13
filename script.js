@@ -13,8 +13,12 @@ let redDot7;
 
 const backgroundImages = ['url("./assets/עמוד\ פתיחה\ הקדמה\ 1-\ סופי.png")', 'url("./assets/עמוד\ פתיחה\ קליטה\ 2-\ סופי.png")', 'url("./assets/עמוד\ פתיחה\ תנאי\ העסקה\ \ 3-\ סופי.png")', 'url("./assets/עמוד\ פתיחה\ קידומים\ והטבות-4\ סופי.png")', 'url("./assets/עמוד_פתיחה_זכויות_וזכאויות_5_סופי.png")', 'url("./assets/עמוד_פתיחה_השירות_הסוציאלי_6_סופי.png")', 'url("./assets/עמוד\ פתיחה\ פרישה\ 7-סופי.png")'];
 
+
 window.onload = function() {
     Load();
+    history.pushState(null,null, location.href);
+    body.style.animation = "fadeInQuestions 1s forwards";
+    
     switch(sessionStorage.getItem("sectionNum")) {
         case "2":
             body.style.backgroundImage = backgroundImages[1];
@@ -77,11 +81,17 @@ window.onload = function() {
         case "8":
             window.location.href = "./sections/TheEnd/TheEnd.html";
         default:
+            sessionStorage.setItem("questionNum", 0);
+            sessionStorage.setItem("trueOrFalseNum", -1 );
             sessionStorage.setItem("sectionNum" , 1);
             body.style.backgroundImage = backgroundImages[0];
             break;
     }
 }
+
+window.onpopstate = function(event) {
+    history.go(1);
+};
 
 //Loads all the variables
 function Load() {
@@ -128,12 +138,6 @@ function SectionPage() {
             window.location.href = "./sections/Preview/Preview.html";
             break;
     }
-};
-
-function StartOver() {
-    sessionStorage.setItem("sectionNum" , 0);
-    body.style.backgroundImage = backgroundImages[0];
-    startOver.style.visibility = "visible";
 };
 
 function Section1() {

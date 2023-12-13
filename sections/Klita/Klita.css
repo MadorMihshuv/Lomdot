@@ -1,5 +1,5 @@
 #body {
-    background-image: url(/assets/Klita/היכרות\ וקליטת\ העובד.png);
+    background-image: url(/assets/Klita/קליטת\ העובד.png);
     background-size: 100vw 100vh;
     background-repeat: no-repeat;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     margin: 0; 
@@ -8,6 +8,37 @@
     z-index: 1;
     user-select: none;
     position: absolute;
+}
+
+#klitaBackground {
+    z-index: 5;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+#questionBackground {
+    z-index: 6;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+@keyframes fadeInQuestions {
+    0% { 
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 #blackBackground {
@@ -43,6 +74,8 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #nextBtn:hover { 
@@ -60,6 +93,8 @@
     font-size:0;
     cursor: pointer;
     z-index: 1;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #backBtn:hover { 
@@ -77,8 +112,67 @@
     cursor: pointer;
     z-index: 1;
     visibility: hidden;
+    width: 7vw;
+    height: 5.7vh;
 }
 
 #continueBtn:hover { 
     left: 2.8vw;
+}
+
+.stages {
+    visibility: hidden;
+    position: absolute;
+    width: 22vw;
+    height: 26vh;
+    opacity: 0;
+}
+
+#stage1 {
+    top: 30vh;
+    left: 75vw;
+}
+
+#stage2 {
+    top: 30vh;
+    left: 55.5vw;
+}
+
+#stage3 {
+    top: 30vh;
+    left: 36vw;
+}
+
+#stage4 {
+    top: 30vh;
+    left: 16.5vw;
+}
+
+#stage5 {
+    top: 48vh;
+    left: 75.5vw;
+}
+
+#stage6 {
+    top: 48vh;
+    left: 56vw;
+}
+
+#stage7 {
+    top: 48vh;
+    left: 36.5vw;
+}
+
+#stage8 {
+    top: 48vh;
+    left: 18.5vw;
+}
+
+@keyframes stagesComeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
 }

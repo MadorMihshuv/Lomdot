@@ -2,6 +2,7 @@ let backBtn;
 let nextBtn;
 let continueBtn;
 
+let sokBackground;
 let blackBackground;
 let body;
 
@@ -25,14 +26,20 @@ const imageBackrounds = ['url("/assets/Sok/דירוגי\ שכר.png")' ,'url("/a
 //Onload function
 window.onload = function() {
     Load();
+    history.pushState(null,null, location.href);
     blackBackground.style.animation = "hideBackground 1.5s";
 }
 
+window.onpopstate = function(event) {
+    history.go(1);
+};
+
 //Onload function
-function Load() {
+function Load() { 
     pageNum = 0;
     body = document.getElementById("body");
     blackBackground = document.getElementById("blackBackground");
+    sokBackground = document.getElementById("sokBackground");
 
     backBtn = document.getElementById("backBtn");
     nextBtn = document.getElementById("nextBtn");
@@ -88,7 +95,13 @@ function GoNext() {
     }
     else {
         sessionStorage.setItem("sectionNum" , 5);
-        window.location.href = "/MainPage.html";
+        sokBackground.style.visibility = "visible";
+        questionBackground.style.visibility = "visible";
+        questionBackground.style.animation = "fadeInQuestions 1.5s forwards";
+        setTimeout(() => {
+            questionBackground.style.visibility = "hidden";
+            window.location.href = "/Exercise/Exercise.html";
+        }, 3000);
     }
 }
 
